@@ -1,0 +1,83 @@
+.post-view{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.wrapper{
+    display: flex;
+    max-width: 85%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 40px;
+    background-color: white;
+}
+
+
+
+.post-container{
+    display: flex;
+    max-width: 400px;
+    min-height: 365px;
+    flex-direction: column;
+    flex: 1;
+    flex-wrap: wrap;;
+    min-width: min(100%, 330px);
+    word-wrap: break-word;
+}
+
+.post-container a{
+    max-width: 100%;
+
+}
+
+.post-container .photo{
+    max-width: 100%;
+    flex: 1;
+}
+
+.post-footer{
+    max-width: 100%;
+    flex: 1;
+    font: var(--h3);
+    margin-top: 8px;
+}
+
+.post-footer > h3{
+    min-height: min(100%, 60px);
+}
+
+.post-container .photo img{
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 230px;
+    max-height: 230px;
+}
+
+.wrapper .post-container .post-footer > h4{
+    text-align: right;
+    color: gray;
+    font-weight: 500;
+}
+
+.post-container a:link,
+.post-container  a:active, 
+.post-container a:visited{
+    text-decoration: none;
+    color: var(--secondary-full);
+}
+
+.post-container a:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 425px){
+    .wrapper{
+        max-width: 100%;
+    }
+}

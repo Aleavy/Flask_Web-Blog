@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit_post.css')}}">
+    <script src="{{url_for('static', filename='js/autoGrow.js')}}"></script>
+    {% endblock %}
+    {% block title %}
+    Create Post 
+    {% endblock %}
+
+{% block body %}
+    <section class="blog-post">
+        <div class="wrapper">
+            <div class="post-container">
+                <hr>
+                <div class="about">
+                    <div class="author-date">
+                        <p>By: {{current_user.username}}</p>
+                    </div>
+                </div>
+                <hr>
+                <form method="post" action="{{url_for('dashboard.edit_post', id=post.id)}}" enctype="multipart/form-data">
+                    {{form.hidden_tag()}}
+                    <div class="post-title">
+                        {{form.title(id='refresh', class_='input-title', placeholder='Insert ur title.', oninput="auto_grow(this)")}}
+                    </div>
+                    <div class="photo">
+                        <img id="pic" src="{{ url_for('home.show_images', user=post.user_id, filename=post.image)}}" alt="">
+                        {{ form.file(class_="image-input", accept='.jpg,.jpeg,.png,.svg', oninput="pic.src=window.URL.createObjectURL(this.files[0])")}}
+                    </div>
+                    <div class="post-body">
+                        {{form.body(id='italic', class_='input-body', placeholder='Insert the article body', value=post.body,  oninput="auto_grow(this)") }}
+                    </div>
+                    <button type="submit">Publish</button>
+                    <!-- TODO: make another botton to publish, for now, it will be published
+                     rigth away but this can be changed, so one button will just save it and another
+                     will publish but now im lazy. -->
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

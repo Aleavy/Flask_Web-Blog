@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --font-family: 'Times New Roman', sans-serif;
+    --nav-btn :  500 20px/18px var(--font-family);
+    --h2: bold 30px/26px var(--font-family);
+    --side-btn: 400 25px/24px var(--font-family);
+    --primary: #321B6C;
+    --secondary: rgba(204,204,255, 0.3);
+    --accent: #000000;
+    --text: #FFFFFF;
+}   
+
+/* HEADER */
+header{
+    display: flex;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    padding: 14px 10px;
+    background-color: var(--primary);
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.filler{
+    max-width: 100px;
+    flex: 0.4;
+}
+
+.username{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1;
+    font: var(--h2);
+    color: var(--text);
+}
+
+.username > h2{
+    font: var(--h2)
+}
+
+nav{
+    flex: 0.5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.links{
+    flex: 1;
+    max-width: 500px;
+    font: var(--nav-btn);
+    display: flex;
+    min-width: 100px;
+    gap: 20px;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.link-btn{
+    border: 1px solid var(--secondary);
+    text-align: center;
+    flex: 1;
+    font: var(--nav-btn);
+    min-width: 100px;
+    max-width: 200px;
+    padding: 13px 0;
+    border-radius: 20px;
+}
+/* HEADER */
+
+
+main {
+    display: flex;
+    height: 100vh;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+section{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0.4;
+}
+
+
+
+.actions{
+    flex-wrap: wrap;
+    background-color: var(--primary);
+    max-width: 300px;
+}
+
+.posts{
+    flex-wrap: wrap;
+    flex: 1;
+    background-color: var(--secondary);
+}
+
+.actions nav{
+    max-height: 600px;
+    padding: 10px;
+    flex: 1;
+}
+
+.actions nav .link-btn{
+    flex: 1;
+    min-width: min(100%, 180px);
+    font: var(--side-btn);
+}
+
+
+
+.links-action{
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    flex-direction: column;
+}
+
+.links-action a{
+    text-decoration: none;
+    color: var(--text);
+}
+
+.link-btn:hover{
+        scale: 1.08;
+        transition: 0.5s ease;
+        transition-delay: 0.005s;
+        background-color: #b3a5ff;
+        box-shadow: 0px 5px 10px #6c757d, 0px -5px 10px #6c757d  ;
+}
+
+.link-btn:not(hover){
+    transform:scale(1);
+    transition: 1s;
+}
+
+.links a{
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    color: var(--text);
+}
+
+hr{
+    border: none;
+    background-color: var(--text);
+    width: 100%;
+    height: 2px;
+}

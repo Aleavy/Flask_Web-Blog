@@ -1,0 +1,49 @@
+{% extends 'user/dashboard.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='view_all_posts.css')}}">
+{{ moment.include_moment() }}
+{{ moment.locale(auto_detect=True) }}
+{% endblock %}
+
+{% block post %}
+    {% if posts|length >= 1 %}
+    <div class="wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for post in posts %}
+                    <td >{{loop.index}}</td>
+                    <td style="font-weight: 600;"><a href="{{url_for('home.blog_post', id=post)}}">{{post.title}}</a></td>
+                    <td>
+                        {{ moment(post.date_created).format('YYYY-MM-DD') }}
+                    </td>
+                    <td  class="noright">
+                        <form method="post" action="{{url_for('dashboard.delete', id=post.id)}}">
+                            {{ form.hidden_tag() }}
+                            {{ form.delete}}
+                        </form>
+                        
+                    </td >
+                    <td class="noleft">
+                        <a href="{{url_for('dashboard.edit_post', id=post.id)}}"><button>Edit</button></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="message">
+        <h1>There was no posts found! Please make one first.</h1>
+    </div>
+    {% endif %}
+{% endblock %}

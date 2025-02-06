@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --font-family: 'Times New Roman', sans-serif;
+    --nav-btn :  500 20px/18px var(--font-family);
+    --h2: bold 28px/26px var(--font-family);
+    --primary: #321B6C;
+    --secondary: rgba(204,204,255, 0.3);
+    --secondary-full: rgb(138, 138, 201);
+    --accent: #000000;
+    --text: #FFFFFF;   
+}
+
+a:link, a:visited, a:active{
+    color: var(--secondary-full);
+}
+
+.wrapper{
+
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.posts{
+    padding: 0 40px;
+    max-height: 100%;
+    overflow: auto;
+}
+
+table{
+    
+    max-height: 100%;
+    text-align: center;
+    width: 100%;
+    background-color: var(--text);
+}
+
+
+
+table,  td {
+    padding: 20px;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.noleft{
+    border: 0;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-left: 0  ;
+    border-right: 0;
+}
+
+.noright{
+    border: 0;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-left: 1px solid  ;
+    border-right: 0;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+th{
+    height: 70%;
+    padding: 20px;
+    border-bottom: 1px;
+}
+
+button{
+    border-color: var(--secondary);
+    background-color: transparent;
+    min-width: 100%;
+    padding: 6px 5px;
+    transition: background-color .7s ease;
+    border-radius: 10px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: var(--secondary);
+}
+
+input[type="submit"]{
+    border-color: var(--secondary);
+    background-color: transparent;
+    min-width: 100%;
+    padding: 6px 5px;
+    transition: background-color .7s ease;
+    border-radius: 10px;
+}
+
+input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: var(--secondary);
+}
+
+@media screen and (max-width: 780px){
+    .posts{
+        padding: 0;
+    }
+}
+
+
+.message{
+    display: flex;
+    min-width: 100%;
+    color: rgb(236, 50, 50);
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1rem, 2vw, 6rem);
+}

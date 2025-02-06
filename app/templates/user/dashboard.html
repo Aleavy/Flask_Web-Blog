@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5e1403a888.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="https://imgs.search.brave.com/B0Z9vUrKJm2uhHTjOPRWqKxuci8hCc5BLYA93sjUpQE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNTI2/OTU2NTExL2VzL3Zl/Y3Rvci9mb25kby1h/YnN0cmFjdG8tbSVD/MyVBMWdpY28tbHV6/LXJvamEuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPXFFcUsx/MW1XX2NUMF9oZ0Ix/N0RtWURRUExVSDNP/UnFENXg2Z0lJakRJ/Zkk9">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    {% block head%} 
+    {% endblock %}
+    <link rel="stylesheet" href="{{url_for('static', filename='dashboard.css')}}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header>
+        <div class="filler"></div>
+        <div class="username">
+            <h2><i class="fa-solid fa-user" ></i>
+                {{current_user.username}}</h2>
+        </div>
+        <nav>
+            <ul class="links">
+                <li class="link-btn"><a href="{{url_for('home.start')}}">Home</a></li>
+                <li class="link-btn"><a href="{{url_for('auth.logout')}}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <section class="actions">
+            <nav>
+                <ul class="links-action">
+                    <li class="link-btn"><a href="{{url_for('dashboard.create_post')}}">Create Post</a></li>
+                    <li class="link-btn"><a href="{{url_for('dashboard.view_all_posts', id=current_user.id)}}">View all Posts</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="posts">
+            {% block post%}
+            {% endblock %}
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='post-view.css')}}">
+{{ moment.include_moment() }}
+{{ moment.locale(auto_detect=True) }}
+{% endblock %}
+
+{% block title %}{{post.title}}{% endblock %}
+
+{% block body %}
+    <section class="blog-post">
+        <div class="wrapper">
+            <div class="post-container">
+                <hr>
+                <div class="about">
+                    <div class="author-date">
+                        <p>By: {{post.author}}</p>
+                        <p>Published at {{ moment(post.date_created).format('YYYY/MM/DD,  h:mm A') }}</p>
+                        {% if post.edited %}
+                            <p>Edited at {{moment(post.edited).format('YYYY/MM/DD,  h:mm A')}}</p>    
+                        {% endif %}
+                    </div>
+                </div>
+                <hr>
+                <div class="post-title">
+                    <p>{{post.title}}</p>
+                </div>
+                <div class="photo">
+                    <img src="{{ url_for('home.show_images', user=post.user_id, filename=post.image)}}" alt="">
+                </div>
+                <div class="post-body">
+                    <p>{{post.body}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
