@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="{{url_for('static', filename='base.css')}}">
-    <script src="https://kit.fontawesome.com/5e1403a888.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="https://imgs.search.brave.com/B0Z9vUrKJm2uhHTjOPRWqKxuci8hCc5BLYA93sjUpQE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNTI2/OTU2NTExL2VzL3Zl/Y3Rvci9mb25kby1h/YnN0cmFjdG8tbSVD/MyVBMWdpY28tbHV6/LXJvamEuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPXFFcUsx/MW1XX2NUMF9oZ0Ix/N0RtWURRUExVSDNP/UnFENXg2Z0lJakRJ/Zkk9">
     {% block head %} {% endblock %}
     <title>{% block title %} {% endblock %}</title>
@@ -14,7 +12,7 @@
 <body>
     <header>
             <div class="title">
-                <a href="https://github.com/Aleavy" ><i class="devicon-github-original"></i></a>
+                <a href="https://github.com/Aleavy"><img src="\static\img\github_logo.svg" alt="github_logo" id="github_logo" fill="#E1EBEE"></a>
                 <p>Functional <span>Blog</span></p>
             </div>
             <nav class="navbar">
@@ -29,7 +27,7 @@
                     {% if current_user.is_authenticated %}
                         <li class="wrapper-menu-link">
                             <a href="#"  id="user">
-                                <i class="fa-solid fa-user" ></i>{{ current_user.username}}
+                                <img src="\static\img\user_logo.svg" alt="user_logo" id="user_logo"><p>{{ current_user.username}}</p>
                             </a>
                             <ul class="links-link">
                                 <li><a href="{{url_for('dashboard.dashboard')}}">Dashboard</a></li>

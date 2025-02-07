@@ -8,8 +8,10 @@
 
 .wrapper{
     display: flex;
+    position: relative;
     max-width: 85%;
-    justify-content: center;
+    min-width: 85%;
+    justify-content: start;
     align-items: center;
     gap: 10px;
     flex-direction: row;
@@ -76,6 +78,29 @@
     text-decoration: underline;
 }
 
+.pagination{
+    padding: 10px 0 0;
+    gap: 10px;
+    min-width: 96%;
+    position: absolute;
+    bottom: 0;
+    font-size: clamp(1rem, 2rem, 3rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.pagination a {
+    color: var(--secondary-full);
+    text-decoration: none;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
 @media screen and (max-width: 425px){
     .wrapper{
         max-width: 100%;
@@ -84,6 +109,6 @@
 
 @media screen and (max-width: 650px){
     .wrapper{
-        padding: 10px;
+        padding: 10px 10px 30px 10px;
     }
 }

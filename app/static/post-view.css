@@ -8,7 +8,7 @@
     --secondary: rgba(204,204,255, 0.3);
     --accent: #000000;
     --text: #FFFFFF;
-    --h1: bold 5em/64px var(--font-family);
+    --h1: bold clamp(5rem, 4rem, 8rem)/64px var(--font-family);
     --h3: 200 24px/30px var(--font-family);
 }   
 

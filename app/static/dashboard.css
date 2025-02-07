@@ -34,6 +34,12 @@ header{
     flex: 0.4;
 }
 
+#user_logo{
+    margin: 0 10px 0  0;
+    max-width: 30px;
+    filter: invert(94%) sepia(0%) saturate(0%) hue-rotate(249deg) brightness(105%) contrast(108%);
+}
+
 .username{
     display: flex;
     flex-wrap: wrap;
