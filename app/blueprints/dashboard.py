@@ -92,6 +92,9 @@ def create_post():
 @bp.route('edit_post/<int:id>', methods=["GET", "POST"])
 @login_required
 def edit_post(id):
+    if current_user.username != post.author or  current_user is None:
+        abort(404)
+        return
     user_id_folder = 'user-' + current_user.get_id()
     user_folder = os.path.join(
         current_app.static_folder, 'images', user_id_folder, 'post'
@@ -99,9 +102,7 @@ def edit_post(id):
     post = Blog_Post.query.filter_by(id=id).first()
     form = EditPostForm(obj=post)
 
-    if current_user.username != post.author:
-        abort(404)
-        return
+
     if form.validate_on_submit():
         try:
             f = form.file.data
