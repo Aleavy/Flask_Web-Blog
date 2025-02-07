@@ -250,3 +250,20 @@ header .navbar{
     border-radius: 20px;
     background-color: #9c8df5;
 }
+
+@media screen and (max-width: 650px){
+    header .navbar{
+        margin-top: 20px;
+
+    }
+
+    header .title {
+        justify-content: center;
+    }
+
+
+
+    header .menu-nav .menu-btn {
+        min-width: 86px;
+    }
+}
