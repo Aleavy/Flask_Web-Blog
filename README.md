@@ -8,18 +8,34 @@
 
 # Screens
 
+## Home
+- Here u see all the posts in a grid like view.
+![alt text](https://github.com/Aleavy/Flask_Web-Blog/blob/main/app/static/img/home.jpgraw=true)
+
 ## Dashboard
 - U can view all the post u have.
 - Delete posts.
 - Go to the post selected.
 - Edit the post.
-- Create a post.
+![alt text](https://github.com/Aleavy/Flask_Web-Blog/blob/main/app/static/img/viewallpost.jpgraw=true)
 
-## Home
-- Here u see all the posts in a grid like view.
+- Create a post.
+![alt text](https://github.com/Aleavy/Flask_Web-Blog/blob/main/app/static/img/createpost.jpgraw=true)
 
 ## Create Post
 - When creating your post, u are seing how will be to your end reader, asuring expected final results.
+![alt text](https://github.com/Aleavy/Flask_Web-Blog/blob/main/app/static/img/createpost.jpgraw=true)
+
+## Post
+- View of the post
+![alt text](https://github.com/Aleavy/Flask_Web-Blog/blob/main/app/static/img/post.jpgraw=true)
+
+## Auth
+- Login
+![alt text](https://github.com/Aleavy/Flask_Web-Blog/blob/main/app/static/img/login.jpgraw=true)
+
+- Sign Up
+![alt text](https://github.com/Aleavy/Flask_Web-Blog/blob/main/app/static/img/signup.jpgraw=true)
 
 # Instalation guide
 
