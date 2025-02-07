@@ -2,4 +2,4 @@
 instance/
 __pycache__/
 .env
-static/images/
+app/static/images/
